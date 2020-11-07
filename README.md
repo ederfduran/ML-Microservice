@@ -14,7 +14,7 @@ You are given a pre-trained, `sklearn` model that has been trained to predict ho
 
 ## What's in the repo?
 
-This is a most relevant files that you most be aware of:
+This is a list with most relevant files that you must be aware of:
 
 - `app.py`: Here is where all code logic resides. Flask is used to expose a trained model capabilities using an API.
 - `Makefile`: This file describes some important tasks such as build, lint, test and run. It is used to automate the process of execute these tasks.

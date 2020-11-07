@@ -2,27 +2,27 @@
 
 ## Project Overview
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API.
-
 You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
-### Project Tasks
+## Requirements
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
+- python
+- flask
+- Docker
+- minikube
+- Hadolint
 
-- Test your project code using linting
-- Complete a Dockerfile to containerize this application
-- Deploy your containerized application using Docker and make a prediction
-- Improve the log statements in the source code for this application
-- Configure Kubernetes and create a Kubernetes cluster
-- Deploy a container using Kubernetes and make a prediction
-- Upload a complete Github repo with CircleCI to indicate that your code has been tested
+## What's in the repo?
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+This is a most relevant files that you most be aware of:
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
-
----
+- `app.py`: Here is where all code logic resides. Flask is used to expose a trained model capabilities using an API.
+- `Makefile`: This file describes some important tasks such as build, lint, test and run. It is used to automate the process of execute these tasks.
+- `Dockerfile`: Describe the steps to Build the image and containerized the application.
+- `run_docker.sh`: Shell file used to build image described in docker file and also to run it as a container
+- `upload_docker.sh`: Shell file used to push the image into dockerhub and int that way use it later on in kubernetes cluster.
+- `run_kubernetes.sh`: Run the app in kubernetes cluster using kubectl and image previously saved in dockerhub.
+- `make_prediction.sh`: make an POST request in our API in order to make a prediction.
 
 ## Setup the Environment
 
